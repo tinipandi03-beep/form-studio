@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#11130f">
+<title>FORM Studio — Digital Experiences</title>
+<style>
+:root{--bg:#11130f;--panel:#1b1e18;--text:#f4f2e9;--muted:#a5a79b;--lime:#d5ff62;--line:#34372e}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif}a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}button{cursor:pointer}
+header{position:sticky;top:0;z-index:5;background:#11130ff0;backdrop-filter:blur(15px);border-bottom:1px solid var(--line);padding:20px 6%;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.logo{font-size:24px;font-weight:900;letter-spacing:-1px}.logo span{color:var(--lime)}nav{display:flex;gap:18px;flex-wrap:wrap;align-items:center}nav a{font-size:13px;color:var(--muted)}nav a:hover,nav a.active{color:var(--lime)}
+.btn{display:inline-block;background:var(--lime);color:#151710;border:0;border-radius:4px;padding:13px 18px;font-weight:800}.secondary{background:transparent;color:var(--text);border:1px solid var(--line)}.small{padding:9px 12px}
+.page{display:none;animation:fade .3s ease}.page.active{display:block}@keyframes fade{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+.wrap{max-width:1120px;margin:auto;padding:75px 25px}.hero{min-height:580px;display:flex;align-items:center;background:radial-gradient(ellipse at 85% 40%,#394329,transparent 38%)}.hero-copy{max-width:820px}
+.eyebrow{font-size:11px;color:var(--lime);letter-spacing:3px;text-transform:uppercase;font-weight:800}
+h1{font-size:clamp(43px,7vw,84px);letter-spacing:-4px;line-height:.98;margin:25px 0}h1 em{font-style:normal;color:var(--lime)}h2{font-size:clamp(30px,4vw,48px);letter-spacing:-2px;margin:14px 0 22px}h3{margin-top:0}p{color:var(--muted);line-height:1.8}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}.card{background:var(--panel);border:1px solid var(--line);padding:24px;border-radius:7px;transition:.2s}.card:hover{transform:translateY(-3px);border-color:#82964a}.num{font-size:35px;font-weight:900;color:var(--lime)}.work{height:165px;background:linear-gradient(135deg,#5a4936,#202018);display:flex;align-items:end;padding:18px;font-size:22px;font-weight:900;margin-bottom:18px;border-radius:4px}.w2{background:linear-gradient(135deg,#3d513e,#181b16)}.w3{background:linear-gradient(135deg,#565548,#1c1d18)}
+.price{font-size:30px;font-weight:900}.list{color:var(--muted);line-height:2}.two{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:start}
+.field{margin:14px 0}.field label{display:block;font-size:12px;color:var(--muted);margin-bottom:7px}input,textarea{width:100%;padding:13px;background:#10120e;border:1px solid var(--line);color:var(--text);border-radius:4px;outline:none}input:focus,textarea:focus{border-color:var(--lime)}textarea{min-height:100px}
+.notice{font-size:13px;color:var(--muted);margin-top:12px;line-height:1.6}.error{color:#ff9285}.ok{color:var(--lime)}
+.admin{max-width:1120px;margin:auto;padding:40px 25px 70px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.stat{background:var(--panel);border:1px solid var(--line);padding:22px;border-radius:6px}.stat small{color:var(--muted)}.stat strong{display:block;font-size:32px;margin-top:12px}.bar-chart{height:170px;display:flex;align-items:end;gap:10px;margin-top:22px;border-bottom:1px solid var(--line)}.bar-col{flex:1;min-width:0;height:100%;display:flex;flex-direction:column;justify-content:end;gap:7px;text-align:center}.bar{background:var(--lime);min-height:3px;border-radius:3px 3px 0 0}.bar-col small{font-size:10px;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:13px}th,td{text-align:left;padding:12px 8px;border-bottom:1px solid var(--line)}th{color:var(--muted)}.table-wrap{overflow:auto}
+footer{border-top:1px solid var(--line);padding:28px 6%;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:var(--muted);font-size:12px}
+@media(max-width:760px){header{padding:16px 5%}nav{gap:12px}.grid,.two{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.wrap{padding:55px 20px}h1{letter-spacing:-2px}.hero{min-height:500px}}
+</style>
+</head>
+<body>
+<header>
+<a class="logo" href="#home">FORM<span>.</span></a>
+<nav id="nav">
+<a href="#home" data-page="home">Beranda</a>
+<a href="#services" data-page="services">Layanan</a>
+<a href="#portfolio" data-page="portfolio">Portofolio</a>
+<a href="#process" data-page="process">Proses</a>
+<a href="#pricing" data-page="pricing">Paket Harga</a>
+<a class="btn small" href="#contact" data-page="contact">Konsultasi ↗</a>
+</nav>
+</header>
+<main>
+<section id="home" class="page active">
+<div class="hero"><div class="wrap hero-copy"><div class="eyebrow">Independent digital studio · Indonesia</div><h1>Website yang membuat<br>bisnis terlihat <em>berbeda.</em></h1><p>Kami merancang website modern untuk cafe, barbershop, UMKM, dan bisnis yang ingin tampil profesional di dunia digital.</p><div class="actions"><a class="btn" href="#contact" data-page="contact">Mulai proyek ↗</a><a class="btn secondary" href="#portfolio" data-page="portfolio">Lihat portofolio</a></div><p style="margin-top:45px">DESAIN CUSTOM　·　RESPONSIVE　·　MODERN</p></div></div>
+<div class="wrap"><div class="eyebrow">Layanan utama</div><h2>Digital presence, built with purpose.</h2><div class="grid"><div class="card"><div class="num">01</div><h3>Website bisnis</h3><p>Website profesional untuk cafe, barbershop, UMKM, dan layanan lokal.</p></div><div class="card"><div class="num">02</div><h3>Landing page</h3><p>Halaman promosi untuk produk, layanan, dan kampanye bisnis.</p></div><div class="card"><div class="num">03</div><h3>UI & visual design</h3><p>Tampilan digital yang rapi, responsif, dan mudah digunakan.</p></div></div></div>
+</section>
+<section id="services" class="page"><div class="wrap"><div class="eyebrow">Layanan</div><h2>Solusi digital untuk kebutuhan bisnis.</h2><p>Kebutuhan setiap bisnis berbeda. Ruang lingkup dan harga final dibicarakan sebelum proyek dimulai.</p><div class="grid"><div class="card"><h3>Company profile</h3><p>Profil, layanan, keunggulan, kontak, dan tombol ajakan bertindak.</p><ul class="list"><li>Desain responsif</li><li>Profil dan layanan</li><li>Kontak bisnis</li></ul></div><div class="card"><h3>Cafe & kuliner</h3><p>Perlihatkan menu, foto, lokasi, dan informasi pemesanan.</p><ul class="list"><li>Menu dan galeri</li><li>Info lokasi</li><li>Tombol pemesanan</li></ul></div><div class="card"><h3>Landing page</h3><p>Halaman khusus untuk promosi produk, event, atau layanan.</p><ul class="list"><li>Struktur fokus</li><li>CTA utama</li><li>Desain sesuai brand</li></ul></div></div></div></section>
+<section id="portfolio" class="page"><div class="wrap"><div class="eyebrow">Selected concepts</div><h2>Konsep visual untuk berbagai bisnis.</h2><p>Contoh di bawah adalah konsep demonstrasi, bukan klaim proyek klien yang telah dikerjakan.</p><div class="grid"><div class="card"><div class="work">RUANG / KOPI</div><h3>Ruang Kopi</h3><p>Konsep cafe dengan nuansa hangat, menu jelas, dan cerita brand.</p></div><div class="card"><div class="work w2">STUDIO / CUT</div><h3>Studio Cut</h3><p>Konsep barbershop dengan visual tegas dan layanan yang mudah dilihat.</p></div><div class="card"><div class="work w3">OBJECT / FORM</div><h3>Object Living</h3><p>Konsep katalog produk dengan layout minimalis.</p></div></div></div></section>
+<section id="process" class="page"><div class="wrap"><div class="eyebrow">Cara kerja</div><h2>Proses yang jelas dari awal.</h2><div class="grid"><div class="card"><div class="num">01</div><h3>Diskusi</h3><p>Bahas bisnis, target, fitur, anggaran, dan referensi desain.</p></div><div class="card"><div class="num">02</div><h3>Desain & pengerjaan</h3><p>Susun struktur, desain, lalu kembangkan sesuai kesepakatan.</p></div><div class="card"><div class="num">03</div><h3>Review & publikasi</h3><p>Tinjau hasil dan siapkan website untuk dipublikasikan.</p></div></div></div></section>
+<section id="pricing" class="page"><div class="wrap"><div class="eyebrow">Paket harga</div><h2>Mulai sesuai kebutuhan kamu.</h2><p>Harga awal ilustratif; penawaran akhir mengikuti fitur dan ruang lingkup proyek.</p><div class="grid"><div class="card"><h3>Landing page</h3><div class="price">Rp20K+</div><p>Untuk promosi sederhana.</p><ul class="list"><li>1 halaman</li><li>Responsif</li><li>Tombol kontak</li></ul><a class="btn secondary" href="#contact" data-page="contact">Tanya paket</a></div><div class="card" style="border-color:#82964a"><h3>Business website</h3><div class="price">Rp150K+</div><p>Untuk bisnis yang membutuhkan beberapa bagian.</p><ul class="list"><li>Profil dan layanan</li><li>Desain responsif</li><li>Kontak dan CTA</li></ul><a class="btn" href="#contact" data-page="contact">Tanya paket</a></div><div class="card"><h3>Custom project</h3><div class="price">Rp500K+</div><p>Untuk kebutuhan fitur khusus.</p><ul class="list"><li>Diskusi fitur</li><li>Desain menyesuaikan</li><li>Estimasi khusus</li></ul><a class="btn secondary" href="#contact" data-page="contact">Diskusikan</a></div></div></div></section>
+<section id="contact" class="page"><div class="wrap two"><div><div class="eyebrow">Hubungi kami</div><h2>Punya ide? Mari wujudkan.</h2><p>Ceritakan website yang kamu butuhkan. Kita diskusikan arah proyek dan fitur yang sesuai.</p><p>WhatsApp: <strong id="waDisplay">Belum diatur</strong></p></div><div class="card"><h3>Mulai konsultasi</h3><div class="field"><label>Nama</label><input id="leadName" placeholder="Nama kamu"></div><div class="field"><label>Nama bisnis</label><input id="leadBusiness" placeholder="Nama bisnis"></div><div class="field"><label>Kebutuhan website</label><input id="leadType" placeholder="Contoh: website cafe"></div><div class="field"><label>Detail</label><textarea id="leadDetails" placeholder="Fitur yang kamu butuhkan..."></textarea></div><button class="btn" id="contactSend">Kirim via WhatsApp ↗</button><div id="contactMsg" class="notice"></div></div></div></section>
+<section id="admin-login" class="page"><div class="wrap" style="max-width:650px"><div class="eyebrow">Private area</div><h2>Admin sign in.</h2><p>Masuk untuk mengelola website dan melihat statistik pengunjung.</p><form id="loginForm" class="card"><div class="field"><label>Username</label><input id="username" autocomplete="username" required></div><div class="field"><label>Password</label><input id="password" type="password" autocomplete="current-password" required></div><button class="btn">Masuk ke dashboard</button><div id="loginMsg" class="notice"></div></form></div></section>
+<section id="admin" class="page"><div class="admin"><div style="display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap"><div><div class="eyebrow">FORM Studio / Control room</div><h2>Dashboard admin</h2></div><div class="actions"><button class="btn secondary" id="refreshStats">Refresh data</button><button class="btn secondary" id="logoutBtn">Keluar</button></div></div>
+<div class="stats"><div class="stat"><small>Total pengunjung unik</small><strong id="statTotal">—</strong></div><div class="stat"><small>Pengunjung hari ini</small><strong id="statToday">—</strong></div><div class="stat"><small>Page views hari ini</small><strong id="statViews">—</strong></div></div>
+<div class="grid" style="grid-template-columns:1.1fr .9fr"><div class="card"><h3>Pengunjung · 7 hari</h3><div id="chart" class="bar-chart"></div></div><div class="card"><h3>Pengaturan akun</h3><p>Konfirmasi dengan password saat ini. Password baru minimal 10 karakter.</p><form id="credentialForm"><div class="field"><label>Password saat ini</label><input id="currentPassword" type="password" required autocomplete="current-password"></div><div class="field"><label>Username baru (opsional)</label><input id="newUsername" autocomplete="username"></div><div class="field"><label>Password baru (opsional)</label><input id="newPassword" type="password" autocomplete="new-password"></div><button class="btn">Simpan perubahan</button><div id="credentialMsg" class="notice"></div></form></div></div>
+<div class="card" style="margin-top:16px"><h3>Halaman populer · 7 hari</h3><div class="table-wrap"><table><thead><tr><th>Halaman</th><th>Views</th></tr></thead><tbody id="pagesTable"></tbody></table></div></div>
+<div class="card" style="margin-top:16px"><h3>Kunjungan terbaru (UTC)</h3><div class="table-wrap"><table><thead><tr><th>Waktu</th><th>Halaman</th></tr></thead><tbody id="recentTable"></tbody></table></div></div>
+<p class="notice">Statistik menggunakan cookie ID acak, bukan alamat IP. Menghapus cookie atau berganti perangkat/browser dapat dihitung sebagai pengunjung baru.</p></div></section>
+</main>
+<footer><span>© <span id="year"></span> FORM Studio</span><span>Independent design & development studio</span></footer>
+<script>
+const WHATSAPP_NUMBER = ""; // Isi nomor internasional tanpa +, contoh 6281234567890
+const publicPages=["home","services","portfolio","process","pricing","contact"];
+const allPages=[...publicPages,"admin-login","admin"];
+const $=id=>document.getElementById(id);
+$("year").textContent=new Date().getFullYear();
+$("waDisplay").textContent=WHATSAPP_NUMBER?"+"+WHATSAPP_NUMBER:"Nomor belum diatur";
+let lastTracked="";
+function currentPage(){const p=location.hash.slice(1);return allPages.includes(p)?p:"home"}
+function showPage(p,change=true){
+ if(!allPages.includes(p))p="home";
+ allPages.forEach(id=>$(id).classList.toggle("active",id===p));
+ document.querySelectorAll("[data-page]").forEach(a=>a.classList.toggle("active",a.dataset.page===p));
+ if(change&&location.hash!=="#"+p)history.pushState(null,"","#"+p);
+ window.scrollTo({top:0,behavior:"smooth"});
+ if(publicPages.includes(p))track(p);
+ if(p==="admin")loadStats();
+}
+document.querySelectorAll("[data-page]").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();showPage(a.dataset.page)}));
+window.addEventListener("hashchange",()=>showPage(currentPage(),false));
+async function api(url,options={}){
+ const r=await fetch(url,{credentials:"same-origin",...options,headers:{"Content-Type":"application/json",...(options.headers||{})}});
+ let d={};try{d=await r.json()}catch{}
+ if(!r.ok)throw Error(d.error||"Permintaan gagal.");return d;
+}
+async function track(page){if(lastTracked===page)return;lastTracked=page;try{await api("/api/track",{method:"POST",body:JSON.stringify({page})})}catch{}}
+$("loginForm").addEventListener("submit",async e=>{e.preventDefault();const m=$("loginMsg");m.className="notice";m.textContent="Memeriksa akun...";
+ try{await api("/api/login",{method:"POST",body:JSON.stringify({username:$("username").value,password:$("password").value})});$("password").value="";m.textContent="Login berhasil.";m.className="notice ok";showPage("admin")}catch(err){m.textContent=err.message;m.className="notice error"}});
+$("logoutBtn").addEventListener("click",async()=>{try{await api("/api/logout",{method:"POST",body:"{}"})}catch{}showPage("admin-login")});
+$("refreshStats").addEventListener("click",loadStats);
+function cellTable(id,rows){const tb=$(id);tb.innerHTML="";if(!rows.length){tb.innerHTML="<tr><td colspan='2'>Belum ada data.</td></tr>";return}rows.forEach(row=>{const tr=document.createElement("tr");row.forEach(v=>{const td=document.createElement("td");td.textContent=String(v);tr.append(td)});tb.append(tr)})}
+async function loadStats(){try{const d=await api("/api/admin/stats");$("statTotal").textContent=d.totalUnique.toLocaleString("id-ID");$("statToday").textContent=d.todayUnique.toLocaleString("id-ID");$("statViews").textContent=d.todayViews.toLocaleString("id-ID");
+ const c=$("chart");c.innerHTML="";const max=Math.max(1,...d.days.map(x=>x.unique));d.days.forEach(day=>{const col=document.createElement("div");col.className="bar-col";const bar=document.createElement("div");bar.className="bar";bar.style.height=(day.unique/max*100)+"%";bar.title=day.unique+" pengunjung";const lab=document.createElement("small");lab.textContent=day.label;col.append(bar,lab);c.append(col)});
+ cellTable("pagesTable",d.popularPages.map(x=>[x.page,x.views]));cellTable("recentTable",d.recent.map(x=>[new Date(x.created_at).toLocaleString("id-ID",{timeZone:"UTC"}),x.page]));
+ }catch(err){$("statTotal").textContent="—";$("statToday").textContent="—";$("statViews").textContent="—";$("chart").textContent=err.message;cellTable("pagesTable",[]);cellTable("recentTable",[])}}
+$("credentialForm").addEventListener("submit",async e=>{e.preventDefault();const m=$("credentialMsg");m.className="notice";m.textContent="Menyimpan...";
+ const body={currentPassword:$("currentPassword").value};if($("newUsername").value.trim())body.newUsername=$("newUsername").value.trim();if($("newPassword").value)body.newPassword=$("newPassword").value;
+ try{const d=await api("/api/admin/credentials",{method:"POST",body:JSON.stringify(body)});m.textContent=d.message;m.className="notice ok";$("currentPassword").value="";$("newUsername").value="";$("newPassword").value=""}catch(err){m.textContent=err.message;m.className="notice error"}});
+$("contactSend").addEventListener("click",()=>{const m=$("contactMsg");if(!WHATSAPP_NUMBER){m.textContent="Nomor WhatsApp belum diatur di kode index.html.";m.className="notice error";return}
+ const text=`Halo FORM Studio!%0ANama: ${encodeURIComponent($("leadName").value)}%0ABisnis: ${encodeURIComponent($("leadBusiness").value)}%0AKebutuhan: ${encodeURIComponent($("leadType").value)}%0ADetail: ${encodeURIComponent($("leadDetails").value)}`;
+ window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+text,"_blank","noopener")});
+showPage(currentPage(),false);
+</script>
+</body>
+</html>
